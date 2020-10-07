@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public int maxScore;
     // Apakah debug window ditampilkan?
     private bool isDebugWindowShown = false;
+    // Objek untuk menggambar prediksi lintasan bola
+    public Trajectory trajectory;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +99,14 @@ public class GameManager : MonoBehaviour
             GUIStyle guiStyle = new GUIStyle(GUI.skin.textArea);
             guiStyle.alignment = TextAnchor.UpperCenter;
             GUI.TextArea(new Rect(Screen.width / 2 - 200, Screen.height - 200, 400, 110), debugText, guiStyle);
+            // Kembalikan warna lama GUI
+            GUI.backgroundColor = oldColor;
+        }
+        // Toggle nilai debug window ketika pemain mengeklik tombol ini.
+        if (GUI.Button(new Rect(Screen.width / 2 - 60, Screen.height - 73, 120, 53), "TOGGLE\nDEBUG INFO"))
+        {
+            isDebugWindowShown = !isDebugWindowShown;
+            trajectory.enabled = !trajectory.enabled;
         }
     }
 }
