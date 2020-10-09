@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour
 {
+    public PlayerControl player1, player2;
     public Rigidbody2D rigidBody2D;
     public float xInitialForce;
     public float yInitialForce;
     private Vector2 trajectoryOrigin;
+    public bool fireball = false;
 
     void Start ()
     {
@@ -57,5 +59,26 @@ public class BallControl : MonoBehaviour
     public Vector2 TrajectoryOrigin
     {
         get { return trajectoryOrigin; }
+    }
+    //Add fireball
+    public void fireBall()
+    {
+        fireball = true;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (fireball)
+        {
+            if (collision.gameObject.tag == "Player 1")
+            {
+                player1.FireBallWin();
+                fireball = false;
+            }
+            if (collision.gameObject.tag == "Player 2")
+            {
+                player2.FireBallWin();
+                fireball = false;
+            }
+        }
     }
 }

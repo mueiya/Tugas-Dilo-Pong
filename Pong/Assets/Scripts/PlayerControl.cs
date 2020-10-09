@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public GameManager gameManager;
     public KeyCode upButton = KeyCode.W;
     public KeyCode downButton = KeyCode.S;
     public float speed = 10.0f;
@@ -73,5 +74,10 @@ public class PlayerControl : MonoBehaviour
         {
             lastContactPoint = collision.GetContact(0);
         }
+    }
+    //auto win
+    public void FireBallWin()
+    {
+        score = gameManager.maxScore;
     }
 }

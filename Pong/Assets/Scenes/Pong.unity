@@ -180,6 +180,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1297510720123461825, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297510720123461825, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
+      propertyPath: m_TagString
       value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297510720123461834, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
@@ -400,9 +404,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7537e53717c97e4f840610fdad93598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 1376559542}
+  player2: {fileID: 1531689243}
   rigidBody2D: {fileID: 0}
   xInitialForce: 50
   yInitialForce: 15
+  fireball: 0
 --- !u!58 &942680492
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -548,6 +555,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1297510720123461825, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297510720123461825, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
+      propertyPath: m_TagString
       value: Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 1297510720123461834, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
@@ -602,6 +613,10 @@ PrefabInstance:
       propertyPath: downButton
       value: 108
       objectReference: {fileID: 0}
+    - target: {fileID: 1297510720123461838, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 149699334}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2862dbe5bdf921446b3e0292bda9aae3, type: 3}
 --- !u!1 &1293860994
@@ -920,7 +935,7 @@ GameObject:
   - component: {fileID: 1886344888}
   - component: {fileID: 1886344887}
   m_Layer: 0
-  m_Name: Item Spawner
+  m_Name: ItemSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
