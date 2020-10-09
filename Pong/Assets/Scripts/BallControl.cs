@@ -25,7 +25,7 @@ public class BallControl : MonoBehaviour
     void PushBall()
     {
         // Tentukan nilai komponen y dari gaya dorong antara -yInitialForce dan yInitialForce
-        float yRandomInitialForce = Random.Range(-yInitialForce, yInitialForce);
+        float yRandomInitialForce = yInitialForce;
 
         // Tentukan nilai acak antara 0 (inklusif) dan 2 (eksklusif)
         float randomDirection = Random.Range(0, 2);
