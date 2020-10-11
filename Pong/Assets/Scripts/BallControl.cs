@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour
 {
-    public PlayerControl player1, player2;
+    public PlayerControl player1;
+    public PlayerControl player2;
     public Rigidbody2D rigidBody2D;
     public float xInitialForce;
     public float yInitialForce;
     private Vector2 trajectoryOrigin;
-    public bool fireball = false;
+    public bool fireball;
 
     void Start ()
     {
@@ -51,6 +52,7 @@ public class BallControl : MonoBehaviour
 
         // Setelah 2 detik, berikan gaya ke bola
         Invoke("PushBall", 2);
+        fireball = false;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -71,13 +73,11 @@ public class BallControl : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player 1")
             {
-                player1.FireBallWin();
-                fireball = false;
+                player2.FireBallWin();
             }
             if (collision.gameObject.tag == "Player 2")
             {
-                player2.FireBallWin();
-                fireball = false;
+                player1.FireBallWin();
             }
         }
     }

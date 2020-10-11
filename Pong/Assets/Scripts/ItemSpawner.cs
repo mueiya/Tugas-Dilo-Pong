@@ -21,6 +21,7 @@ public class ItemSpawner : MonoBehaviour
     {
         RandomTime();
         time = minTime;
+        Debug.Log(spawnTime.ToString());
     }
 
     void FixedUpdate()
@@ -35,6 +36,7 @@ public class ItemSpawner : MonoBehaviour
             SpawnObject();
             StopSpawn();
         }
+
     }
     void SpawnObject()
     {

@@ -7,13 +7,17 @@ public class FireBall : MonoBehaviour
     public ItemSpawner spawner;
     public BallControl ball;
 
-    void OnTriggerExit2D(Collider2D anotherCollider)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (anotherCollider.name == "Ball")
+        BallControl ball = collision.gameObject.GetComponent<BallControl>();
+        if (ball)
         {
-            spawner.RandomTime();
             ball.fireBall();
-            Destroy(gameObject);
         }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+        spawner.RandomTime();
     }
 }
